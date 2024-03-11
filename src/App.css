@@ -4,4 +4,17 @@
     background-repeat: no-repeat;
     background-position: center center;
     height: 100vh;
+    text-align: center;
 }
+
+.header img {
+    padding: 5rem;
+}
+
+.header h2 {
+    color: white;
+    font-size: 2rem;
+}
+
+
+
