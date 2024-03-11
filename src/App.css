@@ -25,6 +25,30 @@
     border-radius: 2rem;
 }
 
+.orderPizza-head {
+    background-color: #CE2829;
+}
+
+.orderPizza-head-container {
+    width: 30%;
+    margin: auto;
+}
+
+.orderPizza-head-container img {
+    padding: 2rem;
+}
+
+.orderPizza-head-container nav {
+    padding: 1rem;
+    color: white;
+}
+
+.orderPizza-head-container nav a{
+    padding: 0.5rem;
+    color: white;
+    text-decoration: none;
+}
+
 
 
 
