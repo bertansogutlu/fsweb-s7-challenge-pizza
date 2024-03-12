@@ -19,7 +19,7 @@ function OrderPizza() {
 
     const yonlendirmeKarti = (yonlendirmeler) => { 
         return (
-            <div>
+            <div className='yonlendirmeKarti'>
                 <nav>
                     {yonlendirmeler.map((yonlendirme,index) => <a href={`/${yonlendirme}/`} key={index}>{yonlendirme}</a>)}
                 </nav>
@@ -28,7 +28,7 @@ function OrderPizza() {
 
     const boyutKarti = (boyutlar) => { 
         return (
-            <div>
+            <div className='boyutKarti'>
                 <h3>Boyut Sec</h3>
                 <div>
                     {boyutlar.map((boyut,index) => <label key={index}><input type="radio" />{boyut}</label>)}
@@ -38,7 +38,7 @@ function OrderPizza() {
 
     const hamurKarti = (hamurlar) => { 
         return (
-            <div>
+            <div className='hamurKarti'>
                 <label>
                     Hamur Sec<br/>
                     <select name="hamur" id="hamur">
@@ -50,7 +50,7 @@ function OrderPizza() {
 
     const malzemeKarti = (malzemeler) => { 
         return (
-            <div>
+            <div className='malzemeKarti'>
                 <h3>EK Malzemeler</h3>
                 <p>En fazla 10 malzeme secebilirsiniz</p>
                 <div>
@@ -64,25 +64,34 @@ function OrderPizza() {
             </div>
     )}
 
+    const pizzaKarti = (pizza) => { 
+        return (
+            <div className='pizzaKarti'>
+                <h3>{pizza.ad}</h3>
+                <div>
+                    <h4>{pizza.fiyat}₺</h4><h5>{pizza.puan}</h5><h5>({pizza.yorumSayisi})</h5>
+                </div>
+                <p>{pizza.aciklama}</p>
+            </div>
+    )}
+
 
 
   return (
     <div className='orderPizza'>
         <section className='orderPizza-head'>
             <div className='orderPizza-head-container'>
-                <img src="../Assets/mile1-assets/logo.svg" alt="" />
+                <img src="../Assets/mile1-assets/logo.svg" alt="logo" />
                 {yonlendirmeKarti(data.yonlendirmeler)}
             </div>
         </section>
         <section>
-            <h3>{pizza.ad}</h3>
-            <div>
-                <h4>{pizza.fiyat}₺</h4><h5>{pizza.puan}</h5><h5>({pizza.yorumSayisi})</h5>
-            </div>
-            <p>{pizza.aciklama}</p>
+            {pizzaKarti(pizza)}
             <form action="">
-                {boyutKarti(data.boyutlar)}
-                {hamurKarti(data.hamurlar)}
+                <div>
+                    {boyutKarti(data.boyutlar)}
+                    {hamurKarti(data.hamurlar)}
+                </div>
                 {malzemeKarti(data.malzemeler)}
             </form>
         </section>
