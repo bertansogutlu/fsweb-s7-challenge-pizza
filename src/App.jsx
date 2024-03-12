@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './reset.css'
 import './App.css'
-import Header from './components/Header'
+import Home from './components/Home'
 import OrderPizza from './components/OrderPizza'
 import {pizza,data,sayfa} from './data.json'
 
@@ -10,9 +10,8 @@ function App() {
 
   return (
     <>
-      <Header/>
+      <Home/>
       <OrderPizza pizza={pizza} data={data} sayfa={sayfa}/>
-      <Header/>
     </>
   )
 }
