@@ -4,7 +4,7 @@ const boyutKarti = (boyutlar) => {
   return (
       <div className='boyutKarti'>
           <h2>Boyut Sec</h2>
-          <div>
+          <div className='boyutContainer'>
               {boyutlar.map((boyut,index) => <label key={index}><input type="radio" />{boyut}</label>)}
           </div>
       </div>
@@ -50,10 +50,12 @@ const notKarti = () => {
 
 function Form({data}) {
   return (
-    <form action="">
-        <div>
+    <form action="" className='form'>
+        <div className='formContainer'>
             {boyutKarti(data.boyutlar)}
+            <div></div>
             {hamurKarti(data.hamurlar)}
+            <div></div>
         </div>
         {malzemeKarti(data.malzemeler)}
         {notKarti()}

@@ -9,7 +9,28 @@
   "data" : {
     "boyutlar": ["Kucuk", "Orta", "Buyuk"],
     "hamurlar": ["Ince", "Orta", "Kalin"],
-    "malzemeler": ["Sosis","Salam","Sucuk"]
+    "malzemeler": [
+      "Domates Sosu",
+      "Mozarella Peyniri",
+      "Mantar",
+      "Sucuk",
+      "Zeytin",
+      "Biberoni",
+      "Rendelenmiş Parmesan Peyniri",
+      "Köfte",
+      "Soğan",
+      "Mısır",
+      "Yeşil Biber",
+      "Ançüez",
+      "Peynirli Kenar",
+      "Salam",
+      "Fesleğen",
+      "Zeytin Yağı",
+      "Mantar",
+      "Jambon",
+      "Karides",
+      "Roka"
+  ]
   },
 
   "sayfa" : {

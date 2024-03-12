@@ -12,6 +12,7 @@ function App() {
     <>
       <Header/>
       <OrderPizza pizza={pizza} data={data} sayfa={sayfa}/>
+      <Header/>
     </>
   )
 }

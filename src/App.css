@@ -9,6 +9,7 @@
 .header-container {
     width: 30%;
     margin: auto;
+    text-align: center;
 }
 
 .header-container img {
@@ -35,6 +36,7 @@ h1 {
 .orderPizza-header-container {
     width: 30%;
     margin: auto;
+    text-align: center;
 }
 
 .orderPizza-header-container img {
@@ -43,6 +45,8 @@ h1 {
 
 .orderPizza-header-container nav {
     color: white;
+    display: flex;
+    gap: 1rem;
 }
 
 .orderPizza-header-container nav a{
@@ -58,6 +62,21 @@ h1 {
     gap: 1rem;
 }
 
+.form {
+    width: 100%;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.boyutContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 h2 {
     font-weight: bold;
 }
@@ -68,4 +87,9 @@ h3 {
 
 div {
     border: 1px solid black;
+}
+
+.pizzaKarti-cetvel {
+    display: flex;
+    justify-content: space-between;
 }
