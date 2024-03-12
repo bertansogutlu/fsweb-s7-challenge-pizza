@@ -80,7 +80,7 @@ function OrderPizza() {
             <div className='notKarti'>
                 <label>
                 <h2>Siparis Notu</h2>
-                <textarea name="not" id="not" cols="30" rows="10"></textarea>
+                <textarea name="not" id="not"></textarea>
                 </label>
             </div>
     )}
@@ -88,7 +88,7 @@ function OrderPizza() {
 
 
   return (
-    <div className='orderPizza'>
+    <main className='orderPizza'>
         <section className='orderPizza-head'>
             <div className='orderPizza-head-container'>
                 <img src="../Assets/mile1-assets/logo.svg" alt="logo" />
@@ -96,17 +96,19 @@ function OrderPizza() {
             </div>
         </section>
         <section>
-            {pizzaKarti(pizza)}
-            <form action="">
-                <div>
-                    {boyutKarti(data.boyutlar)}
-                    {hamurKarti(data.hamurlar)}
-                </div>
-                {malzemeKarti(data.malzemeler)}
-                {notKarti()}
-            </form>
+            <div className='orderPizza-main'>
+                {pizzaKarti(pizza)}
+                <form action="">
+                    <div>
+                        {boyutKarti(data.boyutlar)}
+                        {hamurKarti(data.hamurlar)}
+                    </div>
+                    {malzemeKarti(data.malzemeler)}
+                    {notKarti()}
+                </form>
+            </div>
         </section>
-    </div>
+    </main>
   )
 }
 
