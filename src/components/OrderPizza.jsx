@@ -17,39 +17,61 @@ const data = {
 
 function OrderPizza() {
 
-    const yonlendirmeKarti = (route,index) => { 
-        return <a href={`/${route}/`} key={index}>{route}</a>
-     }
-
-    const boyutKarti = (boyut,index) => { 
+    const yonlendirmeKarti = (yonlendirmeler) => { 
         return (
-        <label key={index}>
-            <input type="radio" />
-            {boyut}
-        </label>)
-     }
+            <div>
+                <nav>
+                    {yonlendirmeler.map((yonlendirme,index) => <a href={`/${yonlendirme}/`} key={index}>{yonlendirme}</a>)}
+                </nav>
+            </div>
+    )}
 
-    const hamurKarti = (hamur,index) => { 
-        return <option value={hamur} key={index}>{hamur}</option>
-    }
-    
-
-    const malzemeKarti = (malzeme,index) => { 
+    const boyutKarti = (boyutlar) => { 
         return (
-        <label key={index}>
-            <input type="checkbox" />
-            {malzeme}
-        </label>)
-     }
+            <div>
+                <h3>Boyut Sec</h3>
+                <div>
+                    {boyutlar.map((boyut,index) => <label key={index}><input type="radio" />{boyut}</label>)}
+                </div>
+            </div>
+    )}
+
+    const hamurKarti = (hamurlar) => { 
+        return (
+            <div>
+                <label>
+                    Hamur Sec<br/>
+                    <select name="hamur" id="hamur">
+                    {hamurlar.map((hamur,index) => <option value={hamur} key={index}>{hamur}</option>)}
+                    </select>
+                </label>
+            </div>
+    )}
+
+    const malzemeKarti = (malzemeler) => { 
+        return (
+            <div>
+                <h3>EK Malzemeler</h3>
+                <p>En fazla 10 malzeme secebilirsiniz</p>
+                <div>
+                    {malzemeler.map((malzeme,index)=>
+                    <label key={index}>
+                        <input type="checkbox" />
+                        {malzeme}
+                    </label>
+                    )}
+                </div>
+            </div>
+    )}
+
+
 
   return (
     <div className='orderPizza'>
         <section className='orderPizza-head'>
             <div className='orderPizza-head-container'>
                 <img src="../Assets/mile1-assets/logo.svg" alt="" />
-                <nav>
-                  {data.yonlendirmeler.map(yonlendirmeKarti)}
-                </nav>
+                {yonlendirmeKarti(data.yonlendirmeler)}
             </div>
         </section>
         <section>
@@ -59,25 +81,9 @@ function OrderPizza() {
             </div>
             <p>{pizza.aciklama}</p>
             <form action="">
-                    <div>
-                        <h3>Boyut Sec</h3>
-                        <div>
-                          {data.boyutlar.map(boyutKarti)}
-                        </div>
-                    </div>
-                    <div>
-                    <h3>Hamur Sec</h3>
-                    <label>
-                        <select name="hamur" id="hamur">
-                           {data.hamurlar.map(hamurKarti)}
-                        </select>
-                    </label>
-                    </div>
-                    <h3>EK Malzemeler</h3>
-                    <p>En fazla 10 malzeme secebilirsiniz</p>
-                    <div>
-                        {data.malzemeler.map(malzemeKarti)}
-                    </div>
+                {boyutKarti(data.boyutlar)}
+                {hamurKarti(data.hamurlar)}
+                {malzemeKarti(data.malzemeler)}
             </form>
         </section>
     </div>
