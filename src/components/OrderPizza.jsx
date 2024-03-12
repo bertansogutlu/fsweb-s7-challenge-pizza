@@ -1,4 +1,7 @@
 import React from 'react'
+import Form from '../helpers/Form'
+import Pizza from '../helpers/Pizza'
+import Nav from '../helpers/Nav'
 
 const pizza = {
     ad: "Pizza Funghi",
@@ -9,101 +12,29 @@ const pizza = {
 }
 
 const data = {
-    yonlendirmeler: ["Ana Sayfa", "Secenekler", "Siparis Olustur"],
     boyutlar: ["Kucuk", "Orta", "Buyuk"],
     hamurlar: ["Ince", "Orta", "Kalin"],
     malzemeler: ["Sosis","Salam","Sucuk"]
 }
 
-const yonlendirmeKarti = (yonlendirmeler) => { 
-    return (
-        <div className='yonlendirmeKarti'>
-            <nav>
-                {yonlendirmeler.map((yonlendirme,index) => <a href={`/${yonlendirme}/`} key={index}>{yonlendirme}</a>)}
-            </nav>
-        </div>
-)}
-
-const pizzaKarti = (pizza) => { 
-    return (
-        <div className='pizzaKarti'>
-            <h2>{pizza.ad}</h2>
-            <div>
-                <h3>{pizza.fiyat}₺</h3><p>{pizza.puan}</p><p>({pizza.yorumSayisi})</p>
-            </div>
-            <p>{pizza.aciklama}</p>
-        </div>
-)}
-
-const boyutKarti = (boyutlar) => { 
-    return (
-        <div className='boyutKarti'>
-            <h2>Boyut Sec</h2>
-            <div>
-                {boyutlar.map((boyut,index) => <label key={index}><input type="radio" />{boyut}</label>)}
-            </div>
-        </div>
-)}
-
-const hamurKarti = (hamurlar) => { 
-    return (
-        <div className='hamurKarti'>
-            <label>
-                <h2>Hamur Sec</h2>
-                <select name="hamur" id="hamur">
-                {hamurlar.map((hamur,index) => <option value={hamur} key={index}>{hamur}</option>)}
-                </select>
-            </label>
-        </div>
-)}
-
-const malzemeKarti = (malzemeler) => { 
-    return (
-        <div className='malzemeKarti'>
-            <h2>EK Malzemeler</h2>
-            <p>En fazla 10 malzeme secebilirsiniz</p>
-            <div>
-                {malzemeler.map((malzeme,index)=>
-                <label key={index}>
-                    <span>{malzeme}</span><input type="checkbox" />
-                    
-                </label>
-                )}
-            </div>
-        </div>
-)}
-
-const notKarti = () => { 
-    return (
-        <div className='notKarti'>
-            <label>
-            <h2>Siparis Notu</h2>
-            <textarea name="not" id="not"></textarea>
-            </label>
-        </div>
-)}
+const sayfa = {
+    yonlendirmeler: ["Ana Sayfa", "Secenekler", "Siparis Olustur"]
+}
 
 function OrderPizza() {
 
   return (
     <main className='orderPizza'>
-        <section className='orderPizza-head'>
-            <div className='orderPizza-head-container'>
+        <section className='orderPizza-header'>
+            <div className='orderPizza-header-container'>
                 <img src="../Assets/mile1-assets/logo.svg" alt="logo" />
-                {yonlendirmeKarti(data.yonlendirmeler)}
+                <Nav sayfa={sayfa}/>
             </div>
         </section>
         <section className='orderPizza-main'>
             <div className='orderPizza-main-container'>
-                {pizzaKarti(pizza)}
-                <form action="">
-                    <div>
-                        {boyutKarti(data.boyutlar)}
-                        {hamurKarti(data.hamurlar)}
-                    </div>
-                    {malzemeKarti(data.malzemeler)}
-                    {notKarti()}
-                </form>
+                <Pizza pizza={pizza}/>
+                <Form data={data}/>
             </div>
         </section>
     </main>
