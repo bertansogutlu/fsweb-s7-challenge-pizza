@@ -26,10 +26,21 @@ function OrderPizza() {
             </div>
     )}
 
+    const pizzaKarti = (pizza) => { 
+        return (
+            <div className='pizzaKarti'>
+                <h2>{pizza.ad}</h2>
+                <div>
+                    <h3>{pizza.fiyat}₺</h3><p>{pizza.puan}</p><p>({pizza.yorumSayisi})</p>
+                </div>
+                <p>{pizza.aciklama}</p>
+            </div>
+    )}
+
     const boyutKarti = (boyutlar) => { 
         return (
             <div className='boyutKarti'>
-                <h3>Boyut Sec</h3>
+                <h2>Boyut Sec</h2>
                 <div>
                     {boyutlar.map((boyut,index) => <label key={index}><input type="radio" />{boyut}</label>)}
                 </div>
@@ -40,7 +51,7 @@ function OrderPizza() {
         return (
             <div className='hamurKarti'>
                 <label>
-                    Hamur Sec<br/>
+                    <h2>Hamur Sec</h2>
                     <select name="hamur" id="hamur">
                     {hamurlar.map((hamur,index) => <option value={hamur} key={index}>{hamur}</option>)}
                     </select>
@@ -51,27 +62,26 @@ function OrderPizza() {
     const malzemeKarti = (malzemeler) => { 
         return (
             <div className='malzemeKarti'>
-                <h3>EK Malzemeler</h3>
+                <h2>EK Malzemeler</h2>
                 <p>En fazla 10 malzeme secebilirsiniz</p>
                 <div>
                     {malzemeler.map((malzeme,index)=>
                     <label key={index}>
                         <input type="checkbox" />
-                        {malzeme}
+                        <h3>{malzeme}</h3>
                     </label>
                     )}
                 </div>
             </div>
     )}
 
-    const pizzaKarti = (pizza) => { 
+    const notKarti = () => { 
         return (
-            <div className='pizzaKarti'>
-                <h3>{pizza.ad}</h3>
-                <div>
-                    <h4>{pizza.fiyat}₺</h4><h5>{pizza.puan}</h5><h5>({pizza.yorumSayisi})</h5>
-                </div>
-                <p>{pizza.aciklama}</p>
+            <div className='notKarti'>
+                <label>
+                <h2>Siparis Notu</h2>
+                <textarea name="not" id="not" cols="30" rows="10"></textarea>
+                </label>
             </div>
     )}
 
@@ -93,6 +103,7 @@ function OrderPizza() {
                     {hamurKarti(data.hamurlar)}
                 </div>
                 {malzemeKarti(data.malzemeler)}
+                {notKarti()}
             </form>
         </section>
     </div>
