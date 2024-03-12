@@ -11,12 +11,12 @@
     "hamurlar": ["Ince", "Orta", "Kalin"],
     "malzemeler": [
       "Domates Sosu",
-      "Mozarella Peyniri",
+      "Mozarella",
       "Mantar",
       "Sucuk",
       "Zeytin",
       "Biberoni",
-      "Rendelenmiş Parmesan Peyniri",
+      "Parmesan",
       "Köfte",
       "Soğan",
       "Mısır",
@@ -29,7 +29,8 @@
       "Mantar",
       "Jambon",
       "Karides",
-      "Roka"
+      "Roka",
+      "Siyah Zeytin"
   ]
   },
 

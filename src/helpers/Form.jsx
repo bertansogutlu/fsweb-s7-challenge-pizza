@@ -27,11 +27,10 @@ const malzemeKarti = (malzemeler) => {
       <div className='malzemeKarti'>
           <h2>EK Malzemeler</h2>
           <p>En fazla 10 malzeme secebilirsiniz</p>
-          <div>
+          <div className='malzemelerContainer'>
               {malzemeler.map((malzeme,index)=>
-              <label key={index}>
-                  <span>{malzeme}</span><input type="checkbox" />
-                  
+              <label key={index} className='malzeme'>
+                  <input type="checkbox" /><span> {malzeme}</span>
               </label>
               )}
           </div>

@@ -77,6 +77,15 @@ h1 {
     gap: 0.5rem;
 }
 
+.malzemelerContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.malzemelerContainer .malzeme {
+    width: 33%;
+}
+
 h2 {
     font-weight: bold;
 }
