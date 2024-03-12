@@ -94,11 +94,18 @@ h3 {
     font-size: 1.2rem;
 }
 
-div {
-    border: 1px solid black;
-}
-
 .pizzaKarti-cetvel {
     display: flex;
     justify-content: space-between;
+}
+
+.succsess {
+    background-color: #CE2829;
+    height: 100vh;
+}
+
+.succsessContainer {
+    width: 30%;
+    margin: auto;
+    text-align: center;
 }
