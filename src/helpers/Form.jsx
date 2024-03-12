@@ -47,6 +47,25 @@ const notKarti = () => {
       </div>
 )}
 
+const ozetKarti = () => { 
+    return (
+        <div className='ozetKarti'>
+            <div className='adetContainer'>
+                <button className='leftButton'>-</button><span>5</span><button className='rightButton'>+</button>
+            </div>
+            <div className='ozetContainer'>
+                <h2>Siparis Toplami</h2>
+                <div className=''>
+                    <span>Secimler</span><span>25</span>
+                </div>
+                <div className=''>
+                    <span>Toplam</span><span>100</span>
+                </div>
+                <button>Siparis Ver</button>
+            </div>
+        </div>
+  )}
+
 function Form({data}) {
   return (
     <form action="" className='form'>
@@ -58,6 +77,7 @@ function Form({data}) {
         </div>
         {malzemeKarti(data.malzemeler)}
         {notKarti()}
+        {ozetKarti()}
     </form>
   )
 }
