@@ -10,6 +10,7 @@ function App() {
 
   return (
     <>
+      <Header/>
       <OrderPizza pizza={pizza} data={data} sayfa={sayfa}/>
     </>
   )
