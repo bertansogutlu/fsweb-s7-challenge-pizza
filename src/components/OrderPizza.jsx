@@ -1,7 +1,7 @@
 import React from 'react'
 import Form from '../helpers/Form'
 import Pizza from '../helpers/Pizza'
-import Nav from '../helpers/Nav'
+import Navigate from '../helpers/Navigate'
 
 function OrderPizza({pizza,data,sayfa}) {
 
@@ -10,7 +10,7 @@ function OrderPizza({pizza,data,sayfa}) {
         <section className='orderPizza-header'>
             <div className='orderPizza-header-container'>
                 <img src="../Assets/mile1-assets/logo.svg" alt="logo" />
-                <Nav sayfa={sayfa}/>
+                <Navigate sayfa={sayfa}/>
             </div>
         </section>
         <section className='orderPizza-main'>

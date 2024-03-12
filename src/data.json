@@ -35,6 +35,10 @@
   },
 
   "sayfa" : {
-    "yonlendirmeler": ["Ana Sayfa", "Secenekler", "Siparis Olustur"]
+    "yonlendirmeler": [
+      {"ad": "Ana Sayfa", "url":""},
+      {"ad": "Secenekler", "url":"success"},
+      {"ad": "Siparis Olustur", "url":"order"}
+    ]
   }
 }
