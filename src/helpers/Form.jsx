@@ -17,7 +17,12 @@ function Form({data,order,setOrder,reset}) {
         if(order.boyut === '') {
             alert('Lutfen boyut secimi yapiniz');
             return true
-        } else {return false}
+        } else if(order.isim.trim().length < 3) {
+            alert('Lutfen en uc harften olusan isim giriniz');
+            return true
+        } else {
+            return false
+        }
     }
 
     const handleChange = (event)=>{
@@ -92,6 +97,10 @@ function Form({data,order,setOrder,reset}) {
     const notKarti = () => { 
         return (
             <div className='notKarti'>
+                <label>
+                <h2>Isminiz</h2>
+                <input onChange={handleChange} value={order.isim} name="isim" type="text" />
+                </label>
                 <label>
                 <h2>Siparis Notu</h2>
                 <textarea onChange={handleChange} value={order.siparisNotu} name="not" id="not"></textarea>

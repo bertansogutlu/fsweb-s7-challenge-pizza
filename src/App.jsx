@@ -10,7 +10,7 @@ import {
   Route
 } from "react-router-dom";
 
-const initialValue = {pizza: pizza,boyut:"",hamur:"Ince",malzemeler:[],adet: 1}
+const initialValue = {pizza: pizza,boyut:"",hamur:"Ince",malzemeler:[],adet: 1,isim:""}
 
 function App() {
   const [order, setOrder] = useState(initialValue)
