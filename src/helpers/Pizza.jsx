@@ -1,14 +1,14 @@
 import React from 'react'
 
 function Pizza({order}) {
-  const pizza = order.pizza
+  const urun = order.urun
   return (
     <div className='pizzaKarti'>
-            <h2>{pizza.isim}</h2>
+            <h2>{urun.isim}</h2>
             <div className='pizzaKarti-cetvel'>
-                <h3>{pizza.fiyat}₺</h3><p></p><p>{pizza.puan}</p><p>({pizza.yorumSayisi})</p>
+                <h3>{urun.fiyat}₺</h3><p></p><p>{urun.puan}</p><p>({urun.yorumSayisi})</p>
             </div>
-            <p>{pizza.aciklama}</p>
+            <p>{urun.aciklama}</p>
         </div>
   )
 }

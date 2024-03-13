@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './reset.css'
 import './App.css'
-import {pizza,data,sayfa} from './data.json'
+import {urun,data,sayfa} from './data.json'
 import Home from './components/Home'
 import OrderPizza from './components/OrderPizza'
 import Success from './components/Success'
@@ -10,7 +10,7 @@ import {
   Route
 } from "react-router-dom";
 
-const initialValue = {pizza: pizza,boyut:"",hamur:"Ince",malzemeler:[],adet: 1,isim:""}
+const initialValue = {urun: urun,boyut:"",hamur:"Ince",malzemeler:[],adet: 1,musteriIsim:""}
 
 function App() {
   const [order, setOrder] = useState(initialValue)

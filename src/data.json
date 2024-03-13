@@ -1,4 +1,4 @@
-{ "pizza" : {
+{ "urun" : {
     "isim": "Special Pizza",
     "kategori": "pizza",
     "ekMalzemeFiyat": 5,

@@ -25,7 +25,7 @@ function Form({data,order,setOrder,reset}) {
         if(order.boyut === '') {
             alert('Lutfen boyut secimi yapiniz');
             return true
-        } else if(order.isim.trim().length < 3) {
+        } else if(order.musteriIsim.trim().length < 3) {
             alert('Lutfen en uc harften olusan isim giriniz');
             return true
         } else if(order.malzemeler.length <= 3) {
@@ -113,7 +113,7 @@ function Form({data,order,setOrder,reset}) {
             <div className='notKarti'>
                 <label>
                 <h2>Isminiz</h2>
-                <input onChange={handleChange} value={order.isim} name="isim" type="text" />
+                <input onChange={handleChange} value={order.musteriIsim} name="musteriIsim" type="text" />
                 </label>
                 <label>
                 <h2>Siparis Notu</h2>
@@ -124,8 +124,8 @@ function Form({data,order,setOrder,reset}) {
 
     const ozetKarti = () => { 
 
-        let malzemelerTutar = order.adet*order.malzemeler.length*order.pizza.ekMalzemeFiyat;
-        let toplamTutar = malzemelerTutar+order.adet*order.pizza.fiyat;
+        let malzemelerTutar = order.adet*order.malzemeler.length*order.urun.ekMalzemeFiyat;
+        let toplamTutar = malzemelerTutar+order.adet*order.urun.fiyat;
 
         return (
             <div className='ozetKarti'>
