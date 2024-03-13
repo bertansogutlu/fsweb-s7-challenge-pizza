@@ -40,7 +40,6 @@
   "sayfa" : {
     "yonlendirmeler": [
       {"isim": "Ana Sayfa", "url":""},
-      {"isim": "Secenekler", "url":""},
       {"isim": "Siparis Olustur", "url":"order"}
     ]
   }
