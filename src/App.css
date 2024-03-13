@@ -115,13 +115,6 @@ h3 {
     border-radius: 0.5rem;
 }
 
-.adetContainer button {
-    width: 2rem;
-    height: 2rem;
-    border: none;
-    background-color: #FDC913;
-}
-
 .adetContainer span {
     width: 2rem;
     height: 2rem;
@@ -131,10 +124,18 @@ h3 {
 }
 
 .adetContainer .leftButton {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background-color: #FDC913;
     border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .adetContainer .rightButton {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background-color: #FDC913;
     border-radius: 0 0.5rem 0.5rem 0;
 }
 

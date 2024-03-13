@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useHistory } from "react-router-dom"
 
 function Form({data,order,setOrder}) {
+
     console.log(order);
+    let history = useHistory();
+    const [isValid,setIsValid] = useState(false)
 
     const handleSubmit = (event)=>{
         event.preventDefault();
+        if(handleValid()) return;
+        setOrder({pizza:"",boyut:"",hamur:"Ince",malzemeler:[],adet: 1})
+        history.push("/success")
+    }
+
+    const handleValid = ()=>{
+        if(order.boyut === '') {
+            alert('Lutfen boyut secimi yapiniz');
+            return true
+        } else {return false}
     }
 
     const handleChange = (event)=>{
@@ -90,7 +104,7 @@ function Form({data,order,setOrder}) {
         return (
             <div className='ozetKarti'>
                 <div className='adetContainer'>
-                    <button className='leftButton' onClick={handleDegistirici}>-</button><span>{order.adet}</span><button className='rightButton' onClick={handleDegistirici}>+</button>
+                    <button type='button' className='leftButton' onClick={handleDegistirici}>-</button><span>{order.adet}</span><button type='button' className='rightButton' onClick={handleDegistirici}>+</button>
                 </div>
                 <div className='ozetContainer'>
                     <h2>Siparis Toplami</h2>
