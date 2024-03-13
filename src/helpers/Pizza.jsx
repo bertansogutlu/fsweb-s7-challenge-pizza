@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Pizza({pizza}) {
+function Pizza({order}) {
+  const pizza = order.pizza
   return (
     <div className='pizzaKarti'>
             <h2>{pizza.ad}</h2>

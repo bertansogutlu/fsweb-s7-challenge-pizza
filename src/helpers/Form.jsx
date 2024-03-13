@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom"
 
-function Form({data,order,setOrder}) {
+function Form({data,order,setOrder,reset}) {
 
     console.log(order);
     let history = useHistory();
-    const [isValid,setIsValid] = useState(false)
 
     const handleSubmit = (event)=>{
         event.preventDefault();
         if(handleValid()) return;
-        setOrder({pizza:"",boyut:"",hamur:"Ince",malzemeler:[],adet: 1})
+        reset();
         history.push("/success")
     }
 
@@ -31,6 +30,25 @@ function Form({data,order,setOrder}) {
         } else {
             setOrder({...order, [event.target.name]: order.malzemeler.filter(item=>item!==malzeme)})
         }
+    }
+
+    const handleDegistirici = (event)=>{
+        switch(event.target.className) {
+            case "leftButton":
+              if(order.adet>1) {
+                setOrder({...order,adet:(order.adet-1)})
+              } else {
+                alert("En az bir adet siparis verebilirsiniz")
+              }
+              break;
+            case "rightButton":
+              if(order.adet<10) {
+                setOrder({...order,adet:(order.adet+1)})
+              } else {
+                alert("En fazla on adet siparis verebilirsiniz")
+              }
+              break;
+          }
     }
 
     const boyutKarti = (boyutlar) => { 
@@ -59,11 +77,12 @@ function Form({data,order,setOrder}) {
         return (
             <div className='malzemeKarti'>
                 <h2>EK Malzemeler</h2>
+                <p>Kucuk: ${data.ekMalzemeFiyat.Kucuk}₺/secim Orta: ${data.ekMalzemeFiyat.Orta}₺/secim Buyuk: ${data.ekMalzemeFiyat.Buyuk}₺/secim</p>
                 <p>En fazla 10 malzeme secebilirsiniz</p>
                 <div className='malzemelerContainer'>
                     {malzemeler.map((malzeme,index)=>
                     <label key={index} className='malzeme'>
-                        <input onChange={(event)=>handleCheckbox(event,malzeme)} type="checkbox" name="malzemeler"/><span> {malzeme}</span>
+                        <input onChange={(event)=>handleCheckbox(event,malzeme)} type="checkbox" name="malzemeler"/><span>{malzeme}</span>
                     </label>
                     )}
                 </div>
@@ -80,26 +99,10 @@ function Form({data,order,setOrder}) {
             </div>
     )}
 
-    const handleDegistirici = (event)=>{
-        switch(event.target.className) {
-            case "leftButton":
-              if(order.adet>1) {
-                setOrder({...order,adet:(order.adet-1)})
-              } else {
-                alert("En az bir adet siparis verebilirsiniz")
-              }
-              break;
-            case "rightButton":
-              if(order.adet<10) {
-                setOrder({...order,adet:(order.adet+1)})
-              } else {
-                alert("En fazla on adet siparis verebilirsiniz")
-              }
-              break;
-          }
-    }
-
     const ozetKarti = () => { 
+
+        let malzemelerTutar = order.boyut ? order.adet*order.malzemeler.length*data.ekMalzemeFiyat[order.boyut] : 0;
+        let toplamTutar = order.boyut ? malzemelerTutar+order.adet*order.pizza.fiyat : 0;
 
         return (
             <div className='ozetKarti'>
@@ -109,10 +112,10 @@ function Form({data,order,setOrder}) {
                 <div className='ozetContainer'>
                     <h2>Siparis Toplami</h2>
                     <div className=''>
-                        <span>Secimler</span><span>25</span>
+                        <span>Secimler</span><span>{malzemelerTutar}</span>
                     </div>
                     <div className=''>
-                        <span>Toplam</span><span>100</span>
+                        <span>Toplam</span><span>{toplamTutar}</span>
                     </div>
                     <button>Siparis Ver</button>
                 </div>

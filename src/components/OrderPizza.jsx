@@ -3,7 +3,7 @@ import Form from '../helpers/Form'
 import Pizza from '../helpers/Pizza'
 import Navigate from '../helpers/Navigate'
 
-function OrderPizza({pizza,data,sayfa,order,setOrder}) {
+function OrderPizza({data,sayfa,order,setOrder,reset}) {
 
   return (
     <main className='orderPizza'>
@@ -15,8 +15,8 @@ function OrderPizza({pizza,data,sayfa,order,setOrder}) {
         </section>
         <section className='orderPizza-main'>
             <div className='orderPizza-main-container'>
-                <Pizza pizza={pizza}/>
-                <Form data={data} order={order} setOrder={setOrder}/>
+                <Pizza order={order}/>
+                <Form data={data} order={order} setOrder={setOrder} reset={reset}/>
             </div>
         </section>
     </main>

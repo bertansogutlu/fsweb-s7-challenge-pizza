@@ -7,6 +7,11 @@
   },
   
   "data" : {
+    "ekMalzemeFiyat": {
+      "Kucuk": 5,
+      "Orta": 10,
+      "Buyuk": 15
+    },
     "boyutlar": ["Kucuk", "Orta", "Buyuk"],
     "hamurlar": ["Ince", "Orta", "Kalin"],
     "malzemeler": [

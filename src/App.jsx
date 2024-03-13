@@ -10,8 +10,13 @@ import {
   Route
 } from "react-router-dom";
 
+const initialValue = {pizza: pizza,boyut:"",hamur:"Ince",malzemeler:[],adet: 1}
+
 function App() {
-  const [order, setOrder] = useState({pizza:"",boyut:"",hamur:"Ince",malzemeler:[],adet: 1})
+  const [order, setOrder] = useState(initialValue)
+  const reset = ()=>{
+    setOrder(initialValue)
+  }
 
   return (
     <>
@@ -20,7 +25,7 @@ function App() {
         <Home/>
       </Route>
       <Route exact path="/order">
-        <OrderPizza pizza={pizza} data={data} sayfa={sayfa} order={order} setOrder={setOrder}/>
+        <OrderPizza data={data} sayfa={sayfa} order={order} setOrder={setOrder} reset={reset}/>
       </Route>
       <Route exact path="/success">
         <Success/>
