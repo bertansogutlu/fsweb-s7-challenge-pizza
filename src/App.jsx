@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [order, setOrder] = useState({pizza:"",boyut:"",hamur:"Ince",malzemeler:[],adet: 1})
 
   return (
     <>
@@ -20,7 +20,7 @@ function App() {
         <Home/>
       </Route>
       <Route exact path="/order">
-        <OrderPizza pizza={pizza} data={data} sayfa={sayfa}/>
+        <OrderPizza pizza={pizza} data={data} sayfa={sayfa} order={order} setOrder={setOrder}/>
       </Route>
       <Route exact path="/success">
         <Success/>
