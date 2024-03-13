@@ -28,7 +28,14 @@ function Form({data,order,setOrder,reset}) {
         } else if(order.isim.trim().length < 3) {
             alert('Lutfen en uc harften olusan isim giriniz');
             return true
-        } else {
+        } else if(order.malzemeler.length <= 3) {
+            alert('Lutfen en az dort malzeme seciniz');
+            return true
+        } else if(order.malzemeler.length > 10) {
+            alert('Lutfen en fazla on malzeme seciniz');
+            return true
+        }
+        else {
             return false
         }
     }
@@ -90,7 +97,6 @@ function Form({data,order,setOrder,reset}) {
         return (
             <div className='malzemeKarti'>
                 <h2>EK Malzemeler</h2>
-                <p>Kucuk: ${data.ekMalzemeFiyat.Kucuk}₺/secim Orta: ${data.ekMalzemeFiyat.Orta}₺/secim Buyuk: ${data.ekMalzemeFiyat.Buyuk}₺/secim</p>
                 <p>En fazla 10 malzeme secebilirsiniz</p>
                 <div className='malzemelerContainer'>
                     {malzemeler.map((malzeme,index)=>
@@ -118,8 +124,8 @@ function Form({data,order,setOrder,reset}) {
 
     const ozetKarti = () => { 
 
-        let malzemelerTutar = order.boyut ? order.adet*order.malzemeler.length*data.ekMalzemeFiyat[order.boyut] : 0;
-        let toplamTutar = order.boyut ? malzemelerTutar+order.adet*order.pizza.fiyat : 0;
+        let malzemelerTutar = order.adet*order.malzemeler.length*order.pizza.ekMalzemeFiyat;
+        let toplamTutar = malzemelerTutar+order.adet*order.pizza.fiyat;
 
         return (
             <div className='ozetKarti'>

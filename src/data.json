@@ -1,5 +1,7 @@
 { "pizza" : {
-    "isim": "Pizza Funghi",
+    "isim": "Special Pizza",
+    "kategori": "pizza",
+    "ekMalzemeFiyat": 5,
     "fiyat": 85.50,
     "puan": 4,
     "yorumSayisi": 200,
@@ -7,11 +9,6 @@
   },
   
   "data" : {
-    "ekMalzemeFiyat": {
-      "Kucuk": 5,
-      "Orta": 10,
-      "Buyuk": 15
-    },
     "boyutlar": ["Kucuk", "Orta", "Buyuk"],
     "hamurlar": ["Ince", "Orta", "Kalin"],
     "malzemeler": [
