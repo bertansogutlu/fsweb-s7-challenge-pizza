@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './reset.css'
 import './App.css'
-import {urun,data,sayfa} from './data.json'
+import {data} from './data.json'
 import Home from './components/Home'
 import OrderPizza from './components/OrderPizza'
 import Success from './components/Success'
@@ -10,6 +10,7 @@ import {
   Route
 } from "react-router-dom";
 
+const {urun,pizza,sayfa} = data
 const initialValue = {urun: urun,boyut:"",hamur:"Ince",malzemeler:[],adet: 1,musteriIsim:""}
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         <Home/>
       </Route>
       <Route exact path="/order">
-        <OrderPizza data={data} sayfa={sayfa} order={order} setOrder={setOrder} reset={reset}/>
+        <OrderPizza pizza={pizza} sayfa={sayfa} order={order} setOrder={setOrder} reset={reset}/>
       </Route>
       <Route exact path="/success">
         <Success/>

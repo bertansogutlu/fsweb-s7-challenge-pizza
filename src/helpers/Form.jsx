@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
-function Form({data,order,setOrder,reset}) {
+function Form({pizza,order,setOrder,reset}) {
 
     console.log(order);
     let history = useHistory();
@@ -148,12 +148,12 @@ function Form({data,order,setOrder,reset}) {
   return (
     <form onSubmit={handleSubmit} className='form'>
         <div className='formContainer'>
-            {boyutKarti(data.boyutlar)}
+            {boyutKarti(pizza.boyutlar)}
             <div></div>
-            {hamurKarti(data.hamurlar)}
+            {hamurKarti(pizza.hamurlar)}
             <div></div>
         </div>
-        {malzemeKarti(data.malzemeler)}
+        {malzemeKarti(pizza.malzemeler)}
         {notKarti()}
         {ozetKarti()}
     </form>

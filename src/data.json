@@ -1,3 +1,4 @@
+{"data":
 { "urun" : {
     "isim": "Special Pizza",
     "kategori": "pizza",
@@ -8,7 +9,7 @@
     "aciklama": "Doğanın lezzetini sofranıza getirin! Yoğun mantar aroması ve mozarella peyniri ile enfes bir buluşma. Lezzetin doruklarına çıkın, her ısırıkta ormanın ferahlığını hissedin!"
   },
   
-  "data" : {
+  "pizza" : {
     "boyutlar": ["Kucuk", "Orta", "Buyuk"],
     "hamurlar": ["Ince", "Orta", "Kalin"],
     "malzemeler": [
@@ -43,4 +44,5 @@
       {"isim": "Siparis Olustur", "url":"order"}
     ]
   }
+}
 }
