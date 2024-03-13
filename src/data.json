@@ -1,5 +1,5 @@
 { "pizza" : {
-    "ad": "Pizza Funghi",
+    "isim": "Pizza Funghi",
     "fiyat": 85.50,
     "puan": 4,
     "yorumSayisi": 200,
@@ -41,9 +41,9 @@
 
   "sayfa" : {
     "yonlendirmeler": [
-      {"ad": "Ana Sayfa", "url":""},
-      {"ad": "Secenekler", "url":""},
-      {"ad": "Siparis Olustur", "url":"order"}
+      {"isim": "Ana Sayfa", "url":""},
+      {"isim": "Secenekler", "url":""},
+      {"isim": "Siparis Olustur", "url":"order"}
     ]
   }
 }

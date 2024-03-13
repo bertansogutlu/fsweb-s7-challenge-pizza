@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { useHistory } from "react-router-dom"
+import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
+import axios from 'axios';
 
 function Form({data,order,setOrder,reset}) {
 
@@ -9,8 +10,15 @@ function Form({data,order,setOrder,reset}) {
     const handleSubmit = (event)=>{
         event.preventDefault();
         if(handleValid()) return;
-        reset();
-        history.push("/success")
+        axios.post('https://reqres.in/api/pizza', order)
+          .then(function (response) {
+            console.log(response);
+            history.push("/success")
+            reset();
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
 
     const handleValid = ()=>{
